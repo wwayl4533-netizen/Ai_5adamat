@@ -1,88 +1,251 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ai_5adamat | أي خدمات</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Tahoma, Arial, sans-serif;
-      background: #f5f5f5;
-      color: #222;
-    }
-    header {
-      background: #000;
-      color: #fff;
-      padding: 30px 15px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-    header p {
-      margin-top: 10px;
-      font-size: 16px;
-      opacity: 0.9;
-    }
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 0 15px;
-    }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
-    .card p {
-      font-size: 14px;
-      color: #555;
-    }
-    footer {
-      margin-top: 40px;
-      background: #111;
-      color: #ccc;
-      text-align: center;
-      padding: 15px;
-      font-size: 13px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ai 5adamat | أي خدمات</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  text-align: center;
+}
+
+.container {
+  max-width: 420px;
+  margin: auto;
+  padding: 30px 15px 80px;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 22px;
+  margin: auto;
+}
+
+h1 {
+  margin: 15px 0 5px;
+}
+
+.desc {
+  font-size: 14px;
+  opacity: 0.9;
+  line-height: 1.8;
+}
+
+/* Social Grid */
+.social-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.social {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 18px 0;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.social i {
+  font-size: 28px;
+}
+
+.social span {
+  display: block;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.social:hover {
+  transform: translateY(-6px) scale(1.05);
+  background: rgba(255,255,255,0.25);
+}
+
+/* Floating Contact Icon */
+.floating-contact {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 58px;
+  height: 58px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+  z-index: 999;
+  transition: transform 0.3s;
+}
+
+.floating-contact:hover {
+  transform: scale(1.12);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  color: #333;
+  width: 90%;
+  max-width: 320px;
+  margin: 120px auto;
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+}
+
+.modal-content a {
+  display: block;
+  text-decoration: none;
+  padding: 14px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.call {
+  background: #2c5364;
+  color: #fff;
+}
+
+.whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+
+.close {
+  font-size: 14px;
+  cursor: pointer;
+  color: #666;
+}
+
+footer {
+  margin-top: 25px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+</style>
 </head>
-<body>  <header>
-    <h1>Ai_5adamat</h1>
-    <p>أي خدمات ذكية – حلول رقمية تعتمد على الذكاء الاصطناعي</p>
-  </header>  <div class="container">
-    <section class="services">
-      <div class="card">
-        <h3>خدمات الذكاء الاصطناعي</h3>
-        <p>تحليل بيانات، توليد محتوى، حلول ذكية مخصصة.</p>
-      </div>
-      <div class="card">
-        <h3>تصميم مواقع</h3>
-        <p>مواقع سريعة، متجاوبة، وعصرية.</p>
-      </div>
-      <div class="card">
-        <h3>برمجة أنظمة</h3>
-        <p>أنظمة ويب مخصصة لإدارة الأعمال.</p>
-      </div>
-      <div class="card">
-        <h3>استشارات تقنية</h3>
-        <p>مساعدتك في اختيار الحلول التقنية الأنسب.</p>
-      </div>
-    </section>
-  </div>  <footer>
-    © 2026 Ai_5adamat – أي خدمات
-  </footer></body>
+
+<body>
+
+<div class="container">
+
+  <div class="logo">أي خدمات</div>
+  <h1>Ai 5adamat</h1>
+
+  <p class="desc">
+    كل خدماتك في مكان واحد<br>
+    حفلات • عقارات • وظائف • تصميم • تسويق • توصيل • سفر وتعليم
+  </p>
+
+  <div class="social-grid">
+
+    <a class="social" href="https://www.facebook.com/share/1BQNUbXW66/" target="_blank">
+      <i class="fab fa-facebook-f"></i>
+      <span>فيسبوك</span>
+    </a>
+
+    <a class="social" href="https://www.instagram.com/ai5adamat" target="_blank">
+      <i class="fab fa-instagram"></i>
+      <span>إنستجرام</span>
+    </a>
+
+    <a class="social" href="https://chat.whatsapp.com/HLiQu6gq4nw3H8jG1qUKVX" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+      <span>مجتمع</span>
+    </a>
+
+    <a class="social" href="https://whatsapp.com/channel/0029VayWXw65kg73B7zo7E1S" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>قناة</span>
+    </a>
+
+    <a class="social" href="https://youtube.com/@ai5adamat" target="_blank">
+      <i class="fab fa-youtube"></i>
+      <span>يوتيوب</span>
+    </a>
+
+    <a class="social" href="https://www.snapchat.com/add/ai5adamat" target="_blank">
+      <i class="fab fa-snapchat"></i>
+      <span>سناب</span>
+    </a>
+
+    <a class="social" href="https://vt.tiktok.com/ZSMKDnmxv/" target="_blank">
+      <i class="fab fa-tiktok"></i>
+      <span>تيك توك</span>
+    </a>
+
+    <a class="social" href="https://maps.app.goo.gl/7goXNyXisW5F9USJ6" target="_blank">
+      <i class="fa-solid fa-location-dot"></i>
+      <span>الموقع</span>
+    </a>
+
+  </div>
+
+  <footer>© 2026 Ai 5adamat – إب 💚</footer>
+</div>
+
+<!-- Floating Contact Icon -->
+<div class="floating-contact" onclick="openModal()">
+  <i class="fa-solid fa-headset"></i>
+</div>
+
+<!-- Contact Modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <a class="call" href="tel:775178888">📞 اتصال مباشر</a>
+    <a class="whatsapp" href="https://wa.me/967733178888">💬 واتساب</a>
+    <div class="close" onclick="closeModal()">إغلاق</div>
+  </div>
+</div>
+
+<script>
+function openModal() {
+  document.getElementById('modal').style.display = 'block';
+}
+
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
+}
+</script>
+
+</body>
 </html>
