@@ -120,58 +120,63 @@ p {
   box-shadow: 0 0 18px rgba(201,162,39,.85);
 }
 
-/* ===== DESKTOP MODE (REAL SCALE UP) ===== */
+/* footer credit */
+.credit {
+  margin-top: 26px;
+  font-size: 11px;
+  opacity: 0.55;
+}
+
+/* ===== DESKTOP MODE (SLIGHTLY BIGGER) ===== */
 @media (min-width: 900px) {
 
   .container {
-    max-width: 960px;
-    padding: 60px 70px;
+    max-width: 1020px;
+    padding: 70px 80px;
   }
 
   .logo-circle {
-    width: 180px;
-    height: 180px;
-    margin-bottom: 32px;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 36px;
   }
 
   h1 {
-    font-size: 42px;
+    font-size: 46px;
   }
 
   p {
-    font-size: 18px;
+    font-size: 19px;
   }
 
   .links {
     grid-template-columns: repeat(6, 1fr);
-    gap: 30px;
-    margin-top: 48px;
+    gap: 34px;
+    margin-top: 52px;
   }
 
   .link {
-    padding: 32px 12px;
-    border-radius: 26px;
+    padding: 36px 14px;
+    border-radius: 28px;
   }
 
   .link i {
-    font-size: 42px;
+    font-size: 46px;
   }
 
   .link span {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .contact {
-    width: 70px;
-    height: 70px;
-    font-size: 30px;
+    width: 74px;
+    height: 74px;
+    font-size: 32px;
   }
-}
 
-footer {
-  margin-top: 30px;
-  font-size: 12px;
-  opacity: .6;
+  .credit {
+    font-size: 12px;
+  }
 }
 </style>
 </head>
@@ -190,15 +195,30 @@ footer {
   <p>كل الخدمات التي تحتاجها مكان واحد</p>
 
   <div class="links">
-    <a href="#" class="link"><i class="fab fa-whatsapp"></i><span>واتساب</span></a>
-    <a href="#" class="link"><i class="fab fa-snapchat"></i><span>سناب</span></a>
-    <a href="#" class="link"><i class="fab fa-facebook"></i><span>فيسبوك</span></a>
-    <a href="#" class="link"><i class="fab fa-instagram"></i><span>انستقرام</span></a>
-    <a href="#" class="link"><i class="fab fa-tiktok"></i><span>تيك توك</span></a>
-    <a href="#" class="link"><i class="fas fa-globe"></i><span>الموقع</span></a>
+    <a href="https://wa.me/967733178888" class="link" target="_blank">
+      <i class="fab fa-whatsapp"></i><span>واتساب</span>
+    </a>
+    <a href="https://www.snapchat.com/add/ai5adamat" class="link" target="_blank">
+      <i class="fab fa-snapchat"></i><span>سناب</span>
+    </a>
+    <a href="https://www.facebook.com/share/1BQNUbXW66/" class="link" target="_blank">
+      <i class="fab fa-facebook"></i><span>فيسبوك</span>
+    </a>
+    <a href="https://www.instagram.com/ai5adamat" class="link" target="_blank">
+      <i class="fab fa-instagram"></i><span>انستقرام</span>
+    </a>
+    <a href="https://vt.tiktok.com/ZSMKDnmxv/" class="link" target="_blank">
+      <i class="fab fa-tiktok"></i><span>تيك توك</span>
+    </a>
+    <a href="https://maps.app.goo.gl/7goXNyXisW5F9USJ6" class="link" target="_blank">
+      <i class="fas fa-globe"></i><span>الموقع</span>
+    </a>
   </div>
 
-  <footer>© 2026 Ai 5adamat</footer>
+  <div class="credit">
+    تصميم المهندس / وائل الحبيشي &nbsp; ت: 779324941
+  </div>
+
 </div>
 
 <a class="contact" href="tel:775178888">
