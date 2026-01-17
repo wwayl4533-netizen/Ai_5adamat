@@ -12,13 +12,10 @@
 :root {
   --gold: #c9a227;
   --gold-light: #f5e6a8;
-  --dark: #0b0b0b;
   --glass: rgba(0,0,0,0.42);
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -27,6 +24,7 @@ body {
   background-size: cover;
   color: #fff;
   text-align: center;
+  padding-bottom: 90px; /* مساحة للفوتر الثابت */
 }
 
 /* overlay */
@@ -38,57 +36,45 @@ body {
   z-index: -1;
 }
 
-/* main card */
+/* container */
 .container {
-  width: 92%;
   max-width: 420px;
   margin: 45px auto;
-  padding: 32px 22px 26px;
+  padding: 32px 22px;
   background: var(--glass);
   border-radius: 26px;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.55);
+  box-shadow: 0 25px 50px rgba(0,0,0,.55);
 }
 
-/* circular logo */
+/* logo */
 .logo-circle {
   width: 120px;
   height: 120px;
   margin: 0 auto 20px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.05); /* خفيف فقط */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 25px rgba(0,0,0,0.45);
-  overflow: hidden;
   border: 3px solid var(--gold-light);
+  overflow: hidden;
 }
 
 .logo-inner {
   width: 100%;
   height: 100%;
-  background: url("bg.jpg") center center no-repeat;
-  background-size: cover;
-  border-radius: 50%;
+  background: url("bg.jpg") center/cover no-repeat;
 }
 
 /* title */
 h1 {
-  margin: 6px 0 4px;
   font-size: 27px;
-  font-weight: 700;
+  margin: 6px 0;
   color: var(--gold);
-  letter-spacing: 0.4px;
 }
 
 p {
-  margin: 0;
   font-size: 14px;
-  line-height: 1.6;
-  opacity: 0.9;
+  opacity: .9;
 }
 
-/* links grid */
+/* icon grid fixed 3x2 */
 .links {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -96,101 +82,102 @@ p {
   margin-top: 32px;
 }
 
-/* single icon */
+/* icon card */
 .link {
-  background: rgba(255,255,255,0.07);
+  background: rgba(255,255,255,.07);
   border-radius: 20px;
-  padding: 20px 8px 18px;
+  padding: 20px 8px;
   text-decoration: none;
   color: #fff;
-  transition: all 0.35s ease;
+  transition: .3s;
 }
 
-/* icon center fix */
 .link i {
   font-size: 30px;
   color: var(--gold);
   display: block;
-  line-height: 1;
-  margin-bottom: 9px;
+  margin-bottom: 8px;
 }
 
-/* label fix */
 .link span {
   font-size: 13px;
-  line-height: 1.3;
-  display: block;
-  margin-top: 2px;
 }
 
-/* hover */
 .link:hover {
-  background: rgba(201,162,39,0.18);
+  background: rgba(201,162,39,.18);
   transform: translateY(-5px);
 }
 
-/* floating contact with gold shine */
+/* floating contact */
 .contact {
   position: fixed;
-  bottom: 22px;
+  bottom: 110px;
   right: 22px;
   width: 56px;
   height: 56px;
   border-radius: 50%;
+  background: linear-gradient(45deg, var(--gold-light), var(--gold));
   display: flex;
   align-items: center;
   justify-content: center;
   color: #000;
   font-size: 25px;
-  text-decoration: none;
-  box-shadow: 0 0 18px rgba(201,162,39,0.85);
-  background: linear-gradient(45deg, var(--gold-light), var(--gold), var(--gold-light));
-  background-size: 200% 200%;
-  animation: shine 2.5s linear infinite, bounce 2s ease-in-out infinite;
-  transition: transform 0.3s;
+  box-shadow: 0 0 18px rgba(201,162,39,.85);
+  z-index: 10;
 }
 
-.contact:hover {
-  transform: scale(1.18);
+/* ===== FIXED FOOTER ===== */
+.footer-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 8px;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(10px);
+  font-size: 11px;
+  line-height: 1.8;
+  opacity: .75;
+  z-index: 9;
 }
 
-/* shine animation */
-@keyframes shine {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* bounce animation */
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-/* footer */
-footer {
-  margin-top: 28px;
-  font-size: 12px;
-  opacity: 0.6;
-}
-  /* Desktop & Large screens */
+/* desktop scale */
 @media (min-width: 900px) {
+
   .container {
-    max-width: 900px;
-    padding: 40px 50px;
+    max-width: 1020px;
+    padding: 70px 80px;
   }
+
+  .logo-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  h1 { font-size: 46px; }
+  p  { font-size: 19px; }
 
   .links {
-    grid-template-columns: repeat(6, 1fr);
-    gap: 22px;
+    gap: 34px;
+    margin-top: 52px;
   }
 
-  h1 {
+  .link {
+    padding: 36px 14px;
+    border-radius: 28px;
+  }
+
+  .link i { font-size: 46px; }
+  .link span { font-size: 17px; }
+
+  .contact {
+    width: 74px;
+    height: 74px;
     font-size: 32px;
   }
 
-  p {
-    font-size: 16px;
+  .footer-fixed {
+    font-size: 12px;
   }
 }
 </style>
@@ -202,7 +189,6 @@ footer {
 
 <div class="container">
 
-  <!-- circular logo -->
   <div class="logo-circle">
     <div class="logo-inner"></div>
   </div>
@@ -212,46 +198,37 @@ footer {
 
   <div class="links">
     <a href="https://wa.me/967733178888" class="link" target="_blank">
-      <i class="fab fa-whatsapp"></i>
-      <span>واتساب</span>
+      <i class="fab fa-whatsapp"></i><span>واتساب</span>
     </a>
-
-       <a href="https://www.snapchat.com/add/ai5adamat" class="link" target="_blank">
-       <i class="fab fa-snapchat"></i>
-      <span>سناب</span>
+    <a href="https://www.snapchat.com/add/ai5adamat" class="link" target="_blank">
+      <i class="fab fa-snapchat"></i><span>سناب</span>
     </a>
-
     <a href="https://www.facebook.com/share/1BQNUbXW66/" class="link" target="_blank">
-      <i class="fab fa-facebook"></i>
-      <span>فيسبوك</span>
+      <i class="fab fa-facebook"></i><span>فيسبوك</span>
     </a>
-
     <a href="https://www.instagram.com/ai5adamat" class="link" target="_blank">
-      <i class="fab fa-instagram"></i>
-      <span>انستقرام</span>
+      <i class="fab fa-instagram"></i><span>انستقرام</span>
     </a>
-
     <a href="https://vt.tiktok.com/ZSMKDnmxv/" class="link" target="_blank">
-      <i class="fab fa-tiktok"></i>
-      <span>تيك توك</span>
+      <i class="fab fa-tiktok"></i><span>تيك توك</span>
     </a>
-
     <a href="https://maps.app.goo.gl/7goXNyXisW5F9USJ6" class="link" target="_blank">
-      <i class="fas fa-globe"></i>
-      <span>الموقع</span>
+      <i class="fas fa-globe"></i><span>الموقع</span>
     </a>
   </div>
 
-  <footer>© 2026 Ai 5adamat</footer>
 </div>
 
-<!-- smart floating contact -->
+<!-- fixed footer -->
+<div class="footer-fixed">
+  © 2026 Ai 5adamat — جميع الحقوق محفوظة<br>
+  سياسة الحقوق: يُمنع النسخ أو إعادة الاستخدام بدون إذن خطي<br>
+  تصميم المهندس / وائل الحبيشي — ت: 779324941
+</div>
+
 <a class="contact" href="tel:775178888">
   <i class="fas fa-phone"></i>
 </a>
 
 </body>
 </html>
-
-
-
