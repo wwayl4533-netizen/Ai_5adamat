@@ -24,6 +24,7 @@ body {
   background-size: cover;
   color: #fff;
   text-align: center;
+  padding-bottom: 90px; /* مساحة للفوتر الثابت */
 }
 
 /* overlay */
@@ -35,7 +36,7 @@ body {
   z-index: -1;
 }
 
-/* ===== MOBILE DEFAULT ===== */
+/* container */
 .container {
   max-width: 420px;
   margin: 45px auto;
@@ -45,6 +46,7 @@ body {
   box-shadow: 0 25px 50px rgba(0,0,0,.55);
 }
 
+/* logo */
 .logo-circle {
   width: 120px;
   height: 120px;
@@ -60,6 +62,7 @@ body {
   background: url("bg.jpg") center/cover no-repeat;
 }
 
+/* title */
 h1 {
   font-size: 27px;
   margin: 6px 0;
@@ -71,6 +74,7 @@ p {
   opacity: .9;
 }
 
+/* icon grid fixed 3x2 */
 .links {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -78,6 +82,7 @@ p {
   margin-top: 32px;
 }
 
+/* icon card */
 .link {
   background: rgba(255,255,255,.07);
   border-radius: 20px;
@@ -106,7 +111,7 @@ p {
 /* floating contact */
 .contact {
   position: fixed;
-  bottom: 22px;
+  bottom: 110px;
   right: 22px;
   width: 56px;
   height: 56px;
@@ -118,16 +123,25 @@ p {
   color: #000;
   font-size: 25px;
   box-shadow: 0 0 18px rgba(201,162,39,.85);
+  z-index: 10;
 }
 
-/* footer credit */
-.credit {
-  margin-top: 26px;
+/* ===== FIXED FOOTER ===== */
+.footer-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 8px;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(10px);
   font-size: 11px;
-  opacity: 0.55;
+  line-height: 1.8;
+  opacity: .75;
+  z-index: 9;
 }
 
-/* ===== DESKTOP MODE (SLIGHTLY BIGGER) ===== */
+/* desktop scale */
 @media (min-width: 900px) {
 
   .container {
@@ -138,19 +152,12 @@ p {
   .logo-circle {
     width: 200px;
     height: 200px;
-    margin-bottom: 36px;
   }
 
-  h1 {
-    font-size: 46px;
-  }
-
-  p {
-    font-size: 19px;
-  }
+  h1 { font-size: 46px; }
+  p  { font-size: 19px; }
 
   .links {
-    grid-template-columns: repeat(6, 1fr);
     gap: 34px;
     margin-top: 52px;
   }
@@ -160,13 +167,8 @@ p {
     border-radius: 28px;
   }
 
-  .link i {
-    font-size: 46px;
-  }
-
-  .link span {
-    font-size: 17px;
-  }
+  .link i { font-size: 46px; }
+  .link span { font-size: 17px; }
 
   .contact {
     width: 74px;
@@ -174,7 +176,7 @@ p {
     font-size: 32px;
   }
 
-  .credit {
+  .footer-fixed {
     font-size: 12px;
   }
 }
@@ -215,10 +217,13 @@ p {
     </a>
   </div>
 
-  <div class="credit">
-    تصميم المهندس / وائل الحبيشي &nbsp; ت: 779324941
-  </div>
+</div>
 
+<!-- fixed footer -->
+<div class="footer-fixed">
+  © 2026 Ai 5adamat — جميع الحقوق محفوظة<br>
+  سياسة الحقوق: يُمنع النسخ أو إعادة الاستخدام بدون إذن خطي<br>
+  تصميم المهندس / وائل الحبيشي — ت: 779324941
 </div>
 
 <a class="contact" href="tel:775178888">
