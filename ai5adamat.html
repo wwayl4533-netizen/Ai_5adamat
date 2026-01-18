@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ai 5adamat</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+  --gold: #c9a227;
+  --gold-light: #f5e6a8;
+  --glass: rgba(0,0,0,0.42);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  background: url("bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 90px; /* مساحة للفوتر الثابت */
+}
+
+/* overlay */
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.68);
+  backdrop-filter: blur(10px);
+  z-index: -1;
+}
+
+/* container */
+.container {
+  max-width: 420px;
+  margin: 45px auto;
+  padding: 32px 22px;
+  background: var(--glass);
+  border-radius: 26px;
+  box-shadow: 0 25px 50px rgba(0,0,0,.55);
+}
+
+/* logo */
+.logo-circle {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  border: 3px solid var(--gold-light);
+  overflow: hidden;
+}
+
+.logo-inner {
+  width: 100%;
+  height: 100%;
+  background: url("bg.jpg") center/cover no-repeat;
+}
+
+/* title */
+h1 {
+  font-size: 27px;
+  margin: 6px 0;
+  color: var(--gold);
+}
+
+p {
+  font-size: 14px;
+  opacity: .9;
+}
+
+/* icon grid fixed 3x2 */
+.links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 32px;
+}
+
+/* icon card */
+.link {
+  background: rgba(255,255,255,.07);
+  border-radius: 20px;
+  padding: 20px 8px;
+  text-decoration: none;
+  color: #fff;
+  transition: .3s;
+}
+
+.link i {
+  font-size: 30px;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.link span {
+  font-size: 13px;
+}
+
+.link:hover {
+  background: rgba(201,162,39,.18);
+  transform: translateY(-5px);
+}
+
+/* floating contact */
+.contact {
+  position: fixed;
+  bottom: 110px;
+  right: 22px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--gold-light), var(--gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 25px;
+  box-shadow: 0 0 18px rgba(201,162,39,.85);
+  z-index: 10;
+}
+
+/* ===== FIXED FOOTER ===== */
+.footer-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 8px;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(10px);
+  font-size: 11px;
+  line-height: 1.8;
+  opacity: .75;
+  z-index: 9;
+}
+
+/* desktop scale */
+@media (min-width: 900px) {
+
+  .container {
+    max-width: 1020px;
+    padding: 70px 80px;
+  }
+
+  .logo-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  h1 { font-size: 46px; }
+  p  { font-size: 19px; }
+
+  .links {
+    gap: 34px;
+    margin-top: 52px;
+  }
+
+  .link {
+    padding: 36px 14px;
+    border-radius: 28px;
+  }
+
+  .link i { font-size: 46px; }
+  .link span { font-size: 17px; }
+
+  .contact {
+    width: 74px;
+    height: 74px;
+    font-size: 32px;
+  }
+
+  .footer-fixed {
+    font-size: 12px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-overlay"></div>
+
+<div class="container">
+
+  <div class="logo-circle">
+    <div class="logo-inner"></div>
+  </div>
+
+  <h1>Ai 5adamat</h1>
+  <p>كل الخدمات التي تحتاجها مكان واحد</p>
+
+  <div class="links">
+    <a href="https://chat.whatsapp.com/HLiQu6gq4nw3H8jG1qUKVX" class="link" target="_blank">
+      <i class="fab fa-whatsapp"></i><span>واتساب</span>
+    </a>
+    <a href="https://www.snapchat.com/add/ai5adamat" class="link" target="_blank">
+      <i class="fab fa-snapchat"></i><span>سناب</span>
+    </a>
+    <a href="https://www.facebook.com/share/1BQNUbXW66/" class="link" target="_blank">
+      <i class="fab fa-facebook"></i><span>فيسبوك</span>
+    </a>
+    <a href="https://www.instagram.com/ai5adamat" class="link" target="_blank">
+      <i class="fab fa-instagram"></i><span>انستقرام</span>
+    </a>
+    <a href="https://vt.tiktok.com/ZSMKDnmxv/" class="link" target="_blank">
+      <i class="fab fa-tiktok"></i><span>تيك توك</span>
+    </a>
+    <a href="https://maps.app.goo.gl/7goXNyXisW5F9USJ6" class="link" target="_blank">
+      <i class="fas fa-globe"></i><span>الموقع</span>
+    </a>
+  </div>
+
+</div>
+
+<!-- fixed footer -->
+<div class="footer-fixed">
+  © 2026 Ai 5adamat — جميع الحقوق محفوظة<br>
+  سياسة الحقوق: يُمنع النسخ أو إعادة الاستخدام بدون إذن خطي<br>
+  تصميم المهندس / وائل الحبيشي — ت: 779324941
+</div>
+
+<a class="contact" href="tel:775178888">
+  <i class="fas fa-phone"></i>
+</a>
+
+</body>
+</html>
